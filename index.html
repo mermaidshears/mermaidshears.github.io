@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mermaid Shears | Adriana</title>
+
+<!-- Link Preview / Social Share Tags -->
+<!-- Update the og:url below once your site is live at its final address -->
+<meta name="description" content="Licensed hair stylist in Belmont, CA specializing in color, grey coverage, balayage, and cuts for all lengths.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mermaid Shears | Adriana">
+<meta property="og:description" content="Licensed hair stylist in Belmont, CA specializing in color, grey coverage, balayage, and cuts for all lengths.">
+<meta property="og:image" content="assets/profile.jpg">
+<meta property="og:url" content="https://www.mermaidshears.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mermaid Shears | Adriana">
+<meta name="twitter:description" content="Licensed hair stylist in Belmont, CA specializing in color, grey coverage, balayage, and cuts for all lengths.">
+<meta name="twitter:image" content="assets/profile.jpg">
+
+<!--
+======================================================
+MERMAID SHEARS
+Single-file website
+
+Everything is editable.
+
+CUSTOMIZE:
+
+PROFILE IMAGE
+Replace:
+https://placehold.co/500x500
+
+NAME
+Mermaid Shears
+
+LOCATION
+Located in SF, CA
+
+EMAIL
+email@address.com
+
+PHONE
+(555) 555-5555
+
+BUTTONS
+Edit labels + href links below.
+
+======================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Parisienne&family=MonteCarlo&display=swap" rel="stylesheet">
+
+<style>
+
+/*====================================================
+RESET
+====================================================*/
+
+*,
+*::before,
+*::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+color:white;
+
+position:relative;
+
+padding:30px;
+
+}
+
+/*====================================================
+VARIABLES
+====================================================*/
+
+:root{
+
+--pink:#ffb8dc;
+
+--lavender:#d8c4ff;
+
+--purple:#bba6ff;
+
+--blue:#b9dcff;
+
+--periwinkle:#c5d4ff;
+
+--peach:#ffd9bf;
+
+--white:rgba(255,255,255,.78);
+
+--glass:
+
+rgba(255,255,255,.18);
+
+--glass-border:
+
+rgba(255,255,255,.35);
+
+--shadow:
+
+0 30px 80px rgba(111,77,155,.18);
+
+}
+
+/*====================================================
+ANIMATED BACKGROUND
+====================================================*/
+
+body{
+
+background:
+
+linear-gradient(
+
+-45deg,
+
+#aebdff,
+
+#d6b6ff,
+
+#ffbee6,
+
+#ffd4cb,
+
+#bfdfff,
+
+#ceb8ff
+
+);
+
+background-size:
+
+500% 500%;
+
+animation:
+
+gradientMove
+
+24s ease infinite;
+
+}
+
+/*====================================================
+BACKGROUND OVERLAY
+====================================================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(
+
+circle at top,
+
+rgba(255,255,255,.18),
+
+transparent 45%
+
+),
+
+radial-gradient(
+
+circle at bottom,
+
+rgba(255,255,255,.10),
+
+transparent 55%
+
+);
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+rgba(30,35,70,.18);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+/*====================================================
+TWINKLE STARS
+====================================================*/
+
+.star{
+
+position:absolute;
+
+width:4px;
+
+height:4px;
+
+border-radius:50%;
+
+background:white;
+
+opacity:.5;
+
+animation:
+
+twinkle
+
+4s infinite;
+
+box-shadow:
+
+0 0 8px white;
+
+}
+
+.star::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:-6px;
+
+width:1px;
+
+height:16px;
+
+background:white;
+
+transform:translateX(-50%);
+
+opacity:.5;
+
+}
+
+.star::before{
+
+content:"";
+
+position:absolute;
+
+top:50%;
+
+left:-6px;
+
+width:16px;
+
+height:1px;
+
+background:white;
+
+transform:translateY(-50%);
+
+opacity:.5;
+
+}
+
+/*====================================================
+FLOATING BLOBS
+====================================================*/
+
+.blob{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(70px);
+
+opacity:.5;
+
+animation:
+
+blobFloat
+
+18s ease-in-out infinite;
+
+}
+
+.blob.one{
+
+width:340px;
+
+height:340px;
+
+background:#ffd2ea;
+
+top:-80px;
+
+left:-80px;
+
+}
+
+.blob.two{
+
+width:420px;
+
+height:420px;
+
+background:#c8d8ff;
+
+bottom:-120px;
+
+right:-100px;
+
+animation-delay:5s;
+
+}
+
+.blob.three{
+
+width:260px;
+
+height:260px;
+
+background:#dbc3ff;
+
+top:55%;
+
+left:20%;
+
+animation-delay:9s;
+
+}
+
+/*====================================================
+MAIN CARD
+====================================================*/
+
+.card{
+
+position:relative;
+
+z-index:5;
+
+width:min(1100px,100%);
+
+display:grid;
+
+grid-template-columns:
+
+45% 55%;
+
+gap:60px;
+
+padding:60px;
+
+border-radius:42px;
+
+background:
+
+var(--glass);
+
+backdrop-filter:
+
+blur(26px);
+
+-webkit-backdrop-filter:
+
+blur(26px);
+
+border:
+
+1px solid var(--glass-border);
+
+box-shadow:
+
+var(--shadow);
+
+animation:
+
+fadeIn 1.4s ease;
+
+overflow:hidden;
+
+}
+
+/* subtle inner shine */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+linear-gradient(
+
+120deg,
+
+rgba(255,255,255,.28),
+
+transparent 35%,
+
+transparent 70%,
+
+rgba(255,255,255,.15)
+
+);
+
+opacity:.7;
+
+}
+
+/*====================================================
+LEFT COLUMN
+====================================================*/
+
+.left{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+position:relative;
+
+}
+
+/*====================================================
+PROFILE PHOTO
+====================================================*/
+
+.profile-wrap{
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+padding:6px;
+
+background:
+
+linear-gradient(
+
+45deg,
+
+#ffafd7,
+
+#c5b7ff,
+
+#9dd8ff,
+
+#ffd1c8,
+
+#ffafd7
+
+);
+
+background-size:400%;
+
+animation:none;
+
+}
+
+.profile{
+
+width:100%;
+
+height:100%;
+
+border-radius:50%;
+
+overflow:hidden;
+
+background:white;
+
+}
+
+.profile img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+/*====================================================
+TITLE
+====================================================*/
+
+.logo{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+margin-top:18px;
+
+margin-bottom:18px;
+
+color:white;
+
+}
+
+.logo .name{
+
+font-family:
+
+'MonteCarlo',cursive;
+
+font-size:
+
+4.2rem;
+
+line-height:1;
+
+text-shadow:
+
+0 4px 18px rgba(255,255,255,.35);
+
+}
+
+.logo .brand{
+
+font-family:
+
+'MonteCarlo',cursive;
+
+font-size:
+
+4.2rem;
+
+line-height:1.3;
+
+margin-top:6px;
+
+text-shadow:
+
+0 4px 18px rgba(255,255,255,.35);
+
+}
+
+/*====================================================
+INFO
+====================================================*/
+
+.info{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+font-size:1.05rem;
+
+font-weight:500;
+
+opacity:.95;
+
+}
+
+.info p{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:8px;
+
+}
+
+/*====================================================
+RIGHT SIDE
+====================================================*/
+
+.right{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:22px;
+
+}/*====================================================
+BUTTONS
+====================================================*/
+
+.button-group{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+width:100%;
+max-width:440px;
+
+}
+
+.btn{
+
+position:relative;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+text-decoration:none;
+
+padding:16px 36px;
+
+border-radius:999px;
+
+font-size:1.05rem;
+font-weight:600;
+
+color:white;
+
+overflow:hidden;
+
+width:100%;
+
+background:rgba(255,182,214,.4);
+
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+
+border:
+1px solid rgba(255,182,214,.55);
+
+box-shadow:
+
+var(--shadow);
+
+transition:
+transform .35s,
+box-shadow .35s,
+background .35s;
+
+isolation:isolate;
+
+}
+
+.btn:hover{
+
+box-shadow:
+0 30px 80px rgba(111,77,155,.28);
+
+background:rgba(255,182,214,.55);
+
+}
+
+.btn:active{
+
+transform:scale(.98);
+
+}
+
+.btn span{
+
+position:relative;
+z-index:2;
+
+}
+
+.btn svg{
+
+position:relative;
+z-index:2;
+
+width:20px;
+height:20px;
+
+flex-shrink:0;
+
+fill:white;
+
+}
+
+/*====================================================
+DECORATIVE SVG ICONS
+====================================================*/
+
+.decor{
+
+position:absolute;
+
+opacity:.12;
+
+fill:white;
+
+pointer-events:none;
+
+animation:
+
+floatDecor
+10s ease-in-out infinite;
+
+}
+
+.decor.shears{
+
+width:95px;
+
+top:50px;
+left:70px;
+
+}
+
+.decor.comb{
+
+width:120px;
+
+bottom:60px;
+left:100px;
+
+animation-delay:2s;
+
+}
+
+.decor.spray{
+
+width:90px;
+
+top:70px;
+right:70px;
+
+animation-delay:4s;
+
+}
+
+.decor.dryer{
+
+width:120px;
+
+bottom:70px;
+right:80px;
+
+animation-delay:6s;
+
+}
+
+/*====================================================
+SPARKLES
+====================================================*/
+
+.sparkle{
+
+position:absolute;
+
+width:8px;
+height:8px;
+
+transform:rotate(45deg);
+
+background:white;
+
+opacity:.55;
+
+animation:
+
+sparkle 4s infinite;
+
+box-shadow:
+
+0 0 10px white;
+
+}
+
+.sparkle::before,
+.sparkle::after{
+
+content:"";
+
+position:absolute;
+
+background:white;
+
+}
+
+.sparkle::before{
+
+width:2px;
+height:16px;
+
+left:3px;
+top:-4px;
+
+}
+
+.sparkle::after{
+
+height:2px;
+width:16px;
+
+left:-4px;
+top:3px;
+
+}
+
+/*====================================================
+PARTICLES
+====================================================*/
+
+.particle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:
+
+rgba(255,255,255,.55);
+
+animation:
+
+particleFloat linear infinite;
+
+}
+
+/*====================================================
+ANIMATIONS
+====================================================*/
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+@keyframes gradientBorder{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:400%;
+
+}
+
+}
+
+@keyframes floatPhoto{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+@keyframes blobFloat{
+
+0%,100%{
+
+transform:
+translate(0,0)
+scale(1);
+
+}
+
+50%{
+
+transform:
+translate(30px,-35px)
+scale(1.1);
+
+}
+
+}
+
+@keyframes pageFloat{
+
+0%,100%{
+
+transform:
+translateY(0);
+
+}
+
+50%{
+
+transform:
+translateY(-6px);
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.25;
+transform:scale(.7);
+
+}
+
+50%{
+
+opacity:1;
+transform:scale(1.35);
+
+}
+
+}
+
+@keyframes sparkle{
+
+0%,100%{
+
+opacity:.2;
+transform:
+translateY(0)
+rotate(45deg);
+
+}
+
+50%{
+
+opacity:1;
+transform:
+translateY(-12px)
+rotate(45deg);
+
+}
+
+}
+
+@keyframes particleFloat{
+
+0%{
+
+transform:
+translateY(40px);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:.6;
+
+}
+
+80%{
+
+opacity:.6;
+
+}
+
+100%{
+
+transform:
+translateY(-100vh);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes buttonGradient{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:300%;
+
+}
+
+}
+
+@keyframes shine{
+
+100%{
+
+left:160%;
+
+}
+
+}
+
+@keyframes floatDecor{
+
+0%,100%{
+
+transform:
+translateY(0)
+rotate(0);
+
+}
+
+50%{
+
+transform:
+translateY(-12px)
+rotate(3deg);
+
+}
+
+}
+
+@keyframes wiggle{
+
+0%,100%{
+
+transform:
+translateY(-6px)
+rotate(-1deg);
+
+}
+
+25%{
+
+transform:
+translateY(-6px)
+rotate(1deg);
+
+}
+
+75%{
+
+transform:
+translateY(-6px)
+rotate(-2deg);
+
+}
+
+}
+
+/*====================================================
+RESPONSIVE
+====================================================*/
+
+@media (max-width:900px){
+
+body{
+
+padding:20px;
+
+overflow:auto;
+
+}
+
+.card{
+
+grid-template-columns:1fr;
+
+padding:42px 28px;
+
+gap:40px;
+
+}
+
+.logo{
+
+font-size:3rem;
+
+}
+
+.profile-wrap{
+
+width:220px;
+height:220px;
+
+}
+
+.decor{
+
+display:none;
+
+}
+
+}
+
+@media (max-width:600px){
+
+.logo{
+
+font-size:2.6rem;
+
+}
+
+.info{
+
+font-size:.95rem;
+
+}
+
+.btn{
+
+padding:14px 24px;
+
+font-size:1rem;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Background Blobs -->
+<div class="blob one"></div>
+<div class="blob two"></div>
+<div class="blob three"></div>
+
+<div class="card">
+
+    <!-- LEFT -->
+
+    <section class="left">
+
+        <div class="profile-wrap">
+
+            <div class="profile">
+
+                <!-- Drop your photo in the /assets folder and name it profile.jpg (or update the filename below) -->
+
+                <img
+                src="assets/profile.jpg"
+                alt="Mermaid Shears">
+
+            </div>
+
+        </div>
+
+        <h1 class="logo">
+            <span class="name">Adriana</span>
+            <span class="brand">@MermaidShears</span>
+        </h1>
+
+        <div class="info">
+
+            <p>Licensed hair stylist specializing in color (grey coverage/blending, natural tones, vivids, highlights, & balayage) and cuts for all lengths.</p>
+			
+			<p>📞 <a href="tel:+16505428487" style="color: white; text-decoration: none;">(650) 542-8487</a></p>
+			
+            <p>✉️ <a href="mailto:adriana@mermaidshears.com" style="color: white; text-decoration: none;">adriana@mermaidshears.com</a></p>
+
+			<p>📍 <a href="#"
+       onclick="
+           if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+               window.location.href = 'https://maps.apple/p/bG-TJZbxib_EZ3';
+           } else {
+               window.location.href = 'https://maps.app.goo.gl/PUGNeKjfvSwUNsiT7';
+           }
+           return false;
+       "
+       style="color: white; text-decoration: none;">
+        1075 Alameda de las Pulgas, Belmont, CA 94002
+    </a>
+</p> 
+
+        </div>
+
+    </section>
+
+    <!-- RIGHT -->
+
+    <section class="right">
+
+        <div class="button-group">
+
+                        <!-- Replace with your booking link (e.g. Calendly, Vagaro, Square) -->
+            <a class="btn" href="https://essence.aurasalonware.com/book?set_stylist=3874906">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1zM4 10v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V10H4zm3 3h4v4H7v-4z"/></svg>
+
+                <span>Book an Appointment Here</span>
+
+
+            </a>
+
+            <!-- Replace with your Instagram profile link -->
+            <a class="btn" href="https://www.instagram.com/mermaidshears">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.5.5.85 1.02 1.14 1.7.26.63.44 1.36.49 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.23 1.79-.49 2.43a4.6 4.6 0 0 1-1.14 1.7c-.5.5-1.06.85-1.73 1.14-.63.26-1.36.44-2.43.49-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.23-2.43-.49a4.6 4.6 0 0 1-1.7-1.14 4.6 4.6 0 0 1-1.15-1.7c-.26-.63-.43-1.36-.48-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.48-2.43.26-.66.6-1.22 1.15-1.77.5-.5 1.02-.85 1.7-1.14.63-.26 1.36-.44 2.43-.49C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.97.04-1.5.2-1.85.34-.46.18-.79.4-1.14.74a3 3 0 0 0-.74 1.14c-.14.36-.3.88-.34 1.85C3.84 9.01 3.83 9.33 3.83 12s.01 2.99.06 4.04c.05.97.2 1.5.34 1.85.18.46.4.79.74 1.14.35.34.68.56 1.14.74.36.14.88.3 1.85.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.97-.05 1.5-.2 1.85-.34.46-.18.79-.4 1.14-.74.34-.35.56-.68.74-1.14.14-.36.3-.88.34-1.85.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.05-.97-.2-1.5-.34-1.85a3 3 0 0 0-.74-1.14 3 3 0 0 0-1.14-.74c-.36-.14-.88-.3-1.85-.34C14.99 3.84 14.67 3.83 12 3.83zm0 3.24a4.93 4.93 0 1 1 0 9.86 4.93 4.93 0 0 1 0-9.86zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.12-1.99a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg>
+
+                <span>Follow Me on Instagram</span>
+
+
+            </a>
+
+            <!-- Replace with your TikTok profile link -->
+            <a class="btn" href="https://www.tiktok.com/@mermaidshears">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.2v13.3a2.7 2.7 0 1 1-2-2.6V9.4a5.8 5.8 0 1 0 5.2 5.77V8.9a7.3 7.3 0 0 0 4.4 1.47V7.2A4.4 4.4 0 0 1 16.6 2z"/></svg>
+
+                <span>Follow Me on TikTok</span>
+
+
+            </a>
+
+            <!-- Replace with your Google profile link -->
+            <a class="btn" href="https://maps.app.goo.gl/5NAN6Sa2YFg4Hnd68">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 12.23c0-.75-.07-1.47-.19-2.16H12v4.1h5.4a4.6 4.6 0 0 1-2 3.02v2.5h3.24c1.9-1.75 3-4.32 3-7.46z"/><path d="M12 22c2.7 0 4.97-.9 6.63-2.43l-3.24-2.5c-.9.6-2.05.96-3.4.96-2.6 0-4.8-1.76-5.6-4.12H3.05v2.58A10 10 0 0 0 12 22z"/><path d="M6.4 13.9a6 6 0 0 1 0-3.8V7.52H3.05a10 10 0 0 0 0 8.96l3.36-2.58z"/><path d="M12 5.98c1.47 0 2.79.5 3.83 1.5l2.87-2.87A9.6 9.6 0 0 0 12 2a10 10 0 0 0-8.95 5.52l3.35 2.58C7.2 7.74 9.4 5.98 12 5.98z"/></svg>
+
+                <span>Leave Me a Review on Google</span>
+
+
+            </a>
+
+            <!-- Replace with your Yelp profile link -->
+            <a class="btn" href="https://www.yelp.com/biz/salon-essence-belmont">
+
+                <svg viewBox="0 0 32 32" aria-hidden="true" fill="white"><path d="M13.961 22.279c0.246-0.273 0.601-0.444 0.995-0.444 0.739 0 1.338 0.599 1.338 1.338 0 0.016-0 0.032-0.001 0.048l0-0.002-0.237 6.483c-0.027 0.719-0.616 1.293-1.34 1.293-0.077 0-0.153-0.006-0.226-0.019l0.008 0.001c-1.763-0.303-3.331-0.962-4.69-1.902l0.039 0.025c-0.351-0.245-0.578-0.647-0.578-1.102 0-0.346 0.131-0.661 0.346-0.898l-0.001 0.001 4.345-4.829zM12.853 20.434l-6.301 1.572c-0.097 0.025-0.208 0.039-0.322 0.039-0.687 0-1.253-0.517-1.332-1.183l-0.001-0.006c-0.046-0.389-0.073-0.839-0.073-1.295 0-1.324 0.223-2.597 0.635-3.781l-0.024 0.081c0.183-0.534 0.681-0.911 1.267-0.911 0.214 0 0.417 0.050 0.596 0.14l-0.008-0.004 5.833 2.848c0.45 0.221 0.754 0.677 0.754 1.203 0 0.623-0.427 1.147-1.004 1.294l-0.009 0.002zM13.924 15.223l-6.104-10.574c-0.112-0.191-0.178-0.421-0.178-0.667 0-0.529 0.307-0.987 0.752-1.204l0.008-0.003c1.918-0.938 4.153-1.568 6.511-1.761l0.067-0.004c0.031-0.003 0.067-0.004 0.104-0.004 0.738 0 1.337 0.599 1.337 1.337 0 0.001 0 0.001 0 0.002v-0 12.207c-0 0.739-0.599 1.338-1.338 1.338-0.493 0-0.923-0.266-1.155-0.663l-0.003-0.006zM19.918 20.681l6.176 2.007c0.541 0.18 0.925 0.682 0.925 1.274 0 0.209-0.048 0.407-0.134 0.584l0.003-0.008c-0.758 1.569-1.799 2.889-3.068 3.945l-0.019 0.015c-0.23 0.19-0.527 0.306-0.852 0.306-0.477 0-0.896-0.249-1.134-0.625l-0.003-0.006-3.449-5.51c-0.128-0.201-0.203-0.446-0.203-0.709 0-0.738 0.598-1.336 1.336-1.336 0.147 0 0.289 0.024 0.421 0.068l-0.009-0.003zM26.197 16.742l-6.242 1.791c-0.11 0.033-0.237 0.052-0.368 0.052-0.737 0-1.335-0.598-1.335-1.335 0-0.282 0.087-0.543 0.236-0.758l-0.003 0.004 3.63-5.383c0.244-0.358 0.65-0.59 1.111-0.59 0.339 0 0.649 0.126 0.885 0.334l-0.001-0.001c1.25 1.104 2.25 2.459 2.925 3.99l0.029 0.073c0.070 0.158 0.111 0.342 0.111 0.535 0 0.608-0.405 1.121-0.959 1.286l-0.009 0.002z"/></svg>
+
+                <span>Leave Me a Review on Yelp</span>
+
+
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+
+/* ===========================
+   CREATE TWINKLING STARS
+=========================== */
+
+const starCount = 60;
+
+for(let i=0;i<starCount;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDelay=Math.random()*5+"s";
+
+star.style.transform=`scale(${Math.random()*1.2+.4})`;
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
