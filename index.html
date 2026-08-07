@@ -645,11 +645,11 @@ min-width:0;
 
 display:flex;
 
-flex-wrap:wrap;
+flex-wrap:nowrap;
 
 justify-content:center;
 
-align-items:center;
+align-items:flex-start;
 
 gap:8px;
 
@@ -764,6 +764,8 @@ transform:scale(.98);
 
 position:relative;
 z-index:2;
+
+text-align:center;
 
 }
 
@@ -1198,9 +1200,21 @@ body{
 
 padding:20px;
 
-overflow-y:auto;
+display:block;
+
+min-height:auto;
 
 overflow-x:hidden;
+
+overflow-y:visible;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+.card{
+
+margin:0 auto;
 
 }
 
