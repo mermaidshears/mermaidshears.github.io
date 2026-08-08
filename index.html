@@ -663,6 +663,8 @@ overflow-wrap:anywhere;
 
 word-break:break-word;
 
+text-align:left;
+
 }
 
 /*====================================================
@@ -1247,6 +1249,34 @@ display:none;
 
 }
 
+/* Performance: backdrop-filter and animated blur are expensive to
+   recompute every scroll frame on mobile Safari and can make swiping
+   feel sluggish. Lighten them up on smaller screens. */
+
+.card{
+
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+
+}
+
+.btn{
+
+backdrop-filter:none;
+-webkit-backdrop-filter:none;
+
+background:rgba(255,182,214,.55);
+
+}
+
+.blob{
+
+animation:none;
+
+filter:blur(45px);
+
+}
+
 }
 
 @media (max-width:600px){
@@ -1265,9 +1295,11 @@ font-size:.95rem;
 
 .btn{
 
-padding:14px 24px;
+padding:14px 18px;
 
-font-size:1rem;
+font-size:.92rem;
+
+letter-spacing:-.1px;
 
 }
 
@@ -1403,7 +1435,7 @@ font-size:1rem;
    CREATE TWINKLING STARS
 =========================== */
 
-const starCount = 60;
+const starCount = window.innerWidth <= 600 ? 20 : (window.innerWidth <= 900 ? 35 : 60);
 
 for(let i=0;i<starCount;i++){
 
