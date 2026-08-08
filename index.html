@@ -133,7 +133,7 @@ rgba(255,255,255,.35);
    Higher = blurrier/glassier, but more expensive to render
    (especially on mobile while scrolling). Try values between
    8px (light, fast) and 30px (heavy, glassy). */
---card-blur: 26px;
+--card-blur: 1px;
 
 }
 
@@ -1240,9 +1240,8 @@ display:block;
 
 min-height:auto;
 
-overflow-x:hidden;
-
-overflow-y:visible;
+/* Replace the two overflow lines with this single line: */
+overflow: visible; 
 
 -webkit-overflow-scrolling:touch;
 
