@@ -129,6 +129,12 @@ rgba(255,255,255,.35);
 
 0 30px 80px rgba(111,77,155,.18);
 
+/* Adjust this to control the glass blur strength on the card.
+   Higher = blurrier/glassier, but more expensive to render
+   (especially on mobile while scrolling). Try values between
+   8px (light, fast) and 30px (heavy, glassy). */
+--card-blur: 26px;
+
 }
 
 /*====================================================
@@ -397,11 +403,11 @@ var(--glass);
 
 backdrop-filter:
 
-blur(26px);
+blur(var(--card-blur));
 
 -webkit-backdrop-filter:
 
-blur(26px);
+blur(var(--card-blur));
 
 border:
 
@@ -657,6 +663,30 @@ min-width:0;
 
 }
 
+.info p.address{
+
+gap:6px;
+
+}
+
+.pin-icon{
+
+flex-shrink:0;
+
+margin-top:2px;
+
+}
+
+.info p.address a{
+
+flex:1 1 auto;
+
+min-width:0;
+
+text-align:left;
+
+}
+
 .info p a{
 
 overflow-wrap:anywhere;
@@ -768,6 +798,10 @@ position:relative;
 z-index:2;
 
 text-align:center;
+
+white-space:nowrap;
+
+font-size:clamp(.75rem, 3.6vw, 1.05rem);
 
 }
 
@@ -1277,6 +1311,22 @@ filter:blur(45px);
 
 }
 
+body{
+
+animation:none;
+
+background-position:50% 50%;
+
+}
+
+.star{
+
+animation:none;
+
+opacity:.4;
+
+}
+
 }
 
 @media (max-width:600px){
@@ -1295,11 +1345,19 @@ font-size:.95rem;
 
 .btn{
 
-padding:14px 18px;
+padding:14px 16px;
 
-font-size:.92rem;
+font-size:.87rem;
 
-letter-spacing:-.1px;
+letter-spacing:-.2px;
+
+}
+
+.btn svg{
+
+width:18px;
+
+height:18px;
 
 }
 
@@ -1349,7 +1407,7 @@ letter-spacing:-.1px;
 			
             <p>✉️ <a href="mailto:adriana@mermaidshears.com" style="color: white; text-decoration: none;">adriana@mermaidshears.com</a></p>
 
-			<p>📍 <a href="#"
+			<p class="address"><span class="pin-icon">📍</span> <a href="#"
        onclick="
            if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                window.location.href = 'https://maps.apple/p/bG-TJZbxib_EZ3';
