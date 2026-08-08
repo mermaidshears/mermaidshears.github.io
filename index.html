@@ -133,7 +133,7 @@ rgba(255,255,255,.35);
    Higher = blurrier/glassier, but more expensive to render
    (especially on mobile while scrolling). Try values between
    8px (light, fast) and 30px (heavy, glassy). */
---card-blur: 1px;
+--card-blur: 0.5px;
 
 }
 
@@ -1244,6 +1244,8 @@ min-height:auto;
 overflow-x: clip;
 overflow-y: visible;
 
+animation: gradientMove 24s ease infinite !important;
+
 -webkit-overflow-scrolling:touch;
 
 }
@@ -1309,7 +1311,7 @@ position: fixed;
 
 animation:none;
 
-filter:blur(45px);
+filter:blur(70px);
 
 }
 
@@ -1395,7 +1397,7 @@ height:18px;
 
         <div class="info">
 
-            <p>Licensed hair stylist specializing in color (grey coverage/blending, natural tones, vivids, highlights, & balayage) and cuts for all lengths.</p> <br>
+            <p>Licensed hair stylist specializing in color (grey coverage/blending, natural tones, vivids, highlights, & balayage) and cuts for all lengths.</p>
 			
 			<p>📞 <a href="tel:+16505428487" style="color: white; text-decoration: none;">(650) 542-8487</a></p>
 			
