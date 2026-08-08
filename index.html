@@ -237,7 +237,7 @@ TWINKLE STARS
 
 .star{
 
-position:absolute;
+position:fixed;
 
 width:4px;
 
@@ -683,7 +683,7 @@ flex:1 1 auto;
 
 min-width:0;
 
-text-align:left;
+text-align:center;
 
 }
 
@@ -1240,8 +1240,8 @@ display:block;
 
 min-height:auto;
 
-/* Replace the two overflow lines with this single line: */
-overflow: visible; 
+overflow-x: clip;
+overflow-y: visible;
 
 -webkit-overflow-scrolling:touch;
 
@@ -1288,8 +1288,8 @@ display:none;
 
 .card{
 
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
+backdrop-filter:blur(1px);
+-webkit-backdrop-filter:blur(1px);
 
 }
 
